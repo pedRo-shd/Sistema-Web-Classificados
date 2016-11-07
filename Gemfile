@@ -45,6 +45,8 @@ group :development, :test do
   gem 'byebug'
   # Better error page for Rack apps
   gem 'better_errors'
+  #Generate Entity-Relationship Diagrams for Rails applications http://voormedia.github.io/rails-erd/
+  gem 'rails-erd'
 end
 
 group :development do
