@@ -11,6 +11,8 @@ gem 'foreman'
 gem 'devise'
 # Translations for the devise gem
 gem 'devise-i18n'
+# Rails gem of the Bootstrap based admin theme SB Admin 2. http://dreamingechoes.github.io/bootstrap_sb_admin_base_v2
+gem 'bootstrap_sb_admin_base_v2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
