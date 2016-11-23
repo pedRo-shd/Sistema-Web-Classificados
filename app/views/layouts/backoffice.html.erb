@@ -17,9 +17,13 @@
 
 	  <%= csrf_meta_tags %>
 	</head>
-	<body>
 
-	<%= yield %>
+		<body>
 
-	</body>
+			<div id="wrapper">
+				<%= render partial: "layouts/backoffice_shared/navigation" %>
+				<%= yield %>
+			</div>
+
+		</body>
 </html>
