@@ -11,12 +11,19 @@
                             </div>
 
                         <div class="panel-body">
-                            <div class="table-responsive">
-                        <table class="table table-striped table-bordered table-hover">
+                            <div class="col-lg-6">
+                                    <%= form_for([:backoffice, @category]) do |f| %>
+                                    <div class="form-group">
+                                        <label>Descrição</label>
+                                        <%= f.text_field :description, class:"form-control", placeholder:"Ex: Animais/Pet" %>
+                                    </div>
 
-                        </table>
+                                        <button type="submit" class="btn btn-default">Salvar</button>
+
+                                    <% end %>
                     </div>
                     <!-- /.col-lg-12 -->
+                 </div>
                 </div>
                 <!-- /.row -->
             </div>
