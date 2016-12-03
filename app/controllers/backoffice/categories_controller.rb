@@ -30,7 +30,6 @@ class Backoffice::CategoriesController < BackofficeController
     end
   end
 
-
   private
 
   def set_category
