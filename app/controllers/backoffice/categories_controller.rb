@@ -1,5 +1,5 @@
 class Backoffice::CategoriesController < BackofficeController
-  before_action :set_category, only: [:edit, :update]
+  before_action :set_category, only: [:edit, :update, :destroy]
 
 
   def index
@@ -29,6 +29,7 @@ class Backoffice::CategoriesController < BackofficeController
       render :edit
     end
   end
+
 
   private
 

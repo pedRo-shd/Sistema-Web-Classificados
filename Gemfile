@@ -13,10 +13,16 @@ gem 'devise'
 gem 'devise-i18n'
 # Rails gem of the Bootstrap based admin theme SB Admin 2. http://dreamingechoes.github.io/bootstrap_sb_admin_base_v2
 gem 'bootstrap_sb_admin_base_v2'
+
+source 'https://rails-assets.org' do
 # The most popular front-end framework for developing responsive, mobile first projects on the web.
-gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
-# NotifyJS
-gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
+  gem 'rails-assets-bootstrap', '3.3.7'
+  # NotifyJS
+  gem 'rails-assets-notifyjs'
+  # BootboxJS
+  gem 'rails-assets-bootbox'
+end
+
 # A library for generating fake data such as names, addresses, and phone numbers.
 gem 'faker'
 # Use sqlite3 as the database for Active Record
