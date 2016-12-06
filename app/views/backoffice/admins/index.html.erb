@@ -17,6 +17,7 @@
                         <th>#</th>
                         <th>Nome</th>
                         <th>Descrição</th>
+                        <th>Tipo de Permissão</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -26,6 +27,7 @@
                         <td><%= admin.id %></td>
                         <td><%= admin.name %></td>
                         <td><%= admin.email %></td>
+                        <td><%= admin.role_br %></td>
                         <td style="width: 100px" align="center">
                          <%= link_to edit_backoffice_admin_path(admin), class: "btn btn-primary btn-circle" do %>
                         <i class="fa fa-edit"></i>
