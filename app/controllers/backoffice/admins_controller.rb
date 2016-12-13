@@ -3,7 +3,8 @@ class Backoffice::AdminsController < BackofficeController
 
   def index
   	#@admins = Admin.all
-    @admins = Admin.with_full_access # Busca metodo do model
+    @admins = Admin.with_full_access # Busca metodo do model este ou
+    # restricted_access se eu declarar
   end
 
   def new
