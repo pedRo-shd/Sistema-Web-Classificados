@@ -10,7 +10,7 @@ class Backoffice::AdminsController < BackofficeController
 
   def new
   	@admin = Admin.new
-    authorize @admin
+    authorize @admin # Autorizando classe instanciada
   end
 
   def create
@@ -50,7 +50,7 @@ private
   end
 
 def params_admin
-  passwd = params[:admin][:password]
+    passwd = params[:admin][:password]
     passwd_confirmation = params[:admin][:password_confirmation]
 
     if passwd.blank? && passwd_confirmation.blank?
