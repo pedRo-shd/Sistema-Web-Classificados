@@ -63,6 +63,8 @@ group :development, :test do
   gem 'better_errors'
   #Generate Entity-Relationship Diagrams for Rails applications http://voormedia.github.io/rails-erd/
   gem 'rails-erd'
+  #Catches mail and serves it through a dream.
+  gem 'mailcatcher'
 end
 
 group :development do

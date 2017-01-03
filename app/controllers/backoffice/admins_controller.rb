@@ -26,8 +26,8 @@ end
   end
 
   def update
-
     if @admin.update(params_admin)
+      AdminMailer.update_email(current_admin, @admin).deliver_now
         redirect_to backoffice_admins_path, notice: "O administrador (#{@admin.email}) foi editado com sucesso!"
     else
       render :edit
