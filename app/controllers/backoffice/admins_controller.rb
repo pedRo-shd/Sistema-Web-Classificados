@@ -44,20 +44,21 @@ end
   end
 
 
-private
+	private
 
-  def set_admin
-     @admin = Admin.find(params[:id])
-  end
+	  def set_admin
+	     @admin = Admin.find(params[:id])
+	  end
 
-def params_admin
-    passwd = params[:admin][:password]
-    passwd_confirmation = params[:admin][:password_confirmation]
+	def params_admin
+	    if password_blank?
+	      params[:admin].except!(:password, :password_confirmation)
+	    end
+		params.require(:admin).permit(policy(@admin).permitted_attributes)
+	end
 
-    if passwd.blank? && passwd_confirmation.blank?
-      params[:admin].except!(:password, :password_confirmation)
-    end
-	params.require(:admin).permit(policy(@admin).permitted_attributes)
-end
+	def password_blank?
+		params[:admin][:password].blank? && params[:admin][:password_confirmation].blank?
+	end
 
 end
