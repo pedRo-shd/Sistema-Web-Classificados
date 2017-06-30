@@ -51,10 +51,15 @@ end
 	  end
 
 	def params_admin
-	    if password_blank?
-	      params[:admin].except!(:password, :password_confirmation)
-	    end
-		params.require(:admin).permit(policy(@admin).permitted_attributes)
+    if password_blank?
+      params[:admin].except!(:password, :password_confirmation)
+    end
+
+		if @admin.blank?
+			params.require(:admin).permit(:name, :email, :role, :password, :password_confirmation)
+		else
+			params.require(:admin).permit(policy(@admin).permitted_attributes)
+		end
 	end
 
 	def password_blank?
