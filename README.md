@@ -1,19 +1,34 @@
 # [WEB CLASSIFICADOS]
 <!-- # [Homepage](http://) -->
 
+
 ## Getting Started
 
-Para começar a usar este projeto, siga uma das opções abaixo:
-* Clone the repo: `git clone https://github.com/pedRo-shd/Sistema-Web-Classificados.git`
-* Fork o repo
+###Para começar a usar este projeto, siga uma das opções abaixo:
+* Clone o repsitório: `git clone https://github.com/pedRo-shd/Sistema-Web-Classificados.git`
+* Fork o repositório
+
+### Dependências:
+  * RVM (https://rvm.io/rvm/install)
+
+  * Ruby: 2.3.3
+
+  ```
+  rvm install ruby 2.3.3
+  ```
+
+  * ImageMagick (https://www.imagemagick.org)
+  ```
+  sudo apt-get update
+  sudo apt-get install imagemagick
+  ```
+  <!-- * MySQL: 5.7
+  ```
+  sudo apt-get install mysql-client mysql-server libmysqlclient-dev
+  ``` -->
 
 ##Este projeto desenvolvido em Ruby on Rails é baseado em websites como mercadolivre.com e olx.com,
 ##o projeto contempla a criação de 02 módulos:
-
-## Compatibilidade:
-  * Versão Ruby: 2.3.3
-  * Versão Rails: 4.2.1
-  * Banco de dados MySQL
 
   Usuário
   * Cadastro no site
