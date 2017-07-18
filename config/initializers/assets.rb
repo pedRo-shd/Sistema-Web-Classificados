@@ -8,5 +8,5 @@ Rails.application.config.assets.version = '1.0'
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-Rails.application.config.assets.precompile += %w( backoffice.js site.js )
-Rails.application.config.assets.precompile += %w( backoffice.css site.css )
+Rails.application.config.assets.precompile += %w( site/profile.js backoffice.js site.js )
+Rails.application.config.assets.precompile += %w( site/profile.css backoffice.css site.css )
