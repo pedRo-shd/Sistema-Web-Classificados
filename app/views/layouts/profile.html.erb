@@ -42,25 +42,10 @@
                   </a>
               </li>
               <li>
-                  <a href="#">Dashboard</a>
+                  <%= link_to "Dashboard", site_profile_dashboard_index_path %>
               </li>
               <li>
-                  <a href="#">Shortcuts</a>
-              </li>
-              <li>
-                  <a href="#">Overview</a>
-              </li>
-              <li>
-                  <a href="#">Events</a>
-              </li>
-              <li>
-                  <a href="#">About</a>
-              </li>
-              <li>
-                  <a href="#">Services</a>
-              </li>
-              <li>
-                  <a href="#">Contact</a>
+                  <%= link_to "Meus Anúncios", site_profile_ads_path %>
               </li>
           </ul>
       </div>
@@ -76,7 +61,7 @@
           </div>
       </div>
       <!-- /#page-content-wrapper -->
-      <%#= render partial: "layouts/site_shared/footer" %>		 
+      <%#= render partial: "layouts/site_shared/footer" %>
   </div>
   <!-- /#wrapper -->
   </body>
