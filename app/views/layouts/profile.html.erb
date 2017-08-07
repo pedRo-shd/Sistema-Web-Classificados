@@ -30,9 +30,9 @@
 
 </head>
 
-<body>
+  <body>
       <%= render partial: "layouts/site_shared/navigation" %>
-      <div id="wrapper">
+    <div id="wrapper">
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
@@ -47,6 +47,9 @@
                 </li>
                 <li>
                     <%= link_to "Meus Anúncios", site_profile_ads_path %>
+                </li>
+                <li>
+                    <%= link_to "Novo Anúncio", new_site_profile_ad_path  %>
                 </li>
             </ul>
         </div>
@@ -65,8 +68,11 @@
         <!-- /#page-content-wrapper -->
       </div>
       <%#= render partial: "layouts/site_shared/footer" %>
-  </div>
-  <!-- /#wrapper -->
+    </div>
+
+    <% if notice %>
+      <%= javascript_tag "$.notify('#{notice}', 'success');" %>
+    <% end %>
   </body>
 
 </html>

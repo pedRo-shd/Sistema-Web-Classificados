@@ -5,6 +5,20 @@ class Site::Profile::AdsController < Site::ProfileController
     @ads = Ad.to_the(current_member)
   end
 
+  def new
+    @ad = Ad.new
+  end
+
+  def create
+    @ad = Ad.new(params_ad)
+    @ad.member = current_member
+    if @ad.save
+      redirect_to site_profile_ads_path, notice: "Anúncio cadastrado com sucesso"
+    else
+      render :new, notice: "Anúncio não foi cadastrado, tente novamente"
+    end
+  end
+
   def edit
     #
   end
@@ -13,7 +27,7 @@ class Site::Profile::AdsController < Site::ProfileController
     if @ad.update(params_ad)
       redirect_to site_profile_ads_path, notice: "Anúncio atualizado com sucesso"
     else
-      render :edit, notice: "O Anúncio #{@ad.title} não foi atualizado, tente novamente"
+      render :edit, notice: "O Anúncio não foi atualizado, tente novamente"
     end
   end
 
@@ -24,6 +38,6 @@ class Site::Profile::AdsController < Site::ProfileController
     end
 
     def params_ad
-      params.require(:ad).permit(:id, :price :category_id, :title, :description, :picture)
+      params.require(:ad).permit(:id, :price, :category_id, :title, :description, :picture)
     end
 end

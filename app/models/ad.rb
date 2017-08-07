@@ -2,6 +2,9 @@ class Ad < ActiveRecord::Base
   belongs_to :category
   belongs_to :member
 
+  # Validates
+  validates_presence_of :title, :description, :category, :price, :picture
+  
   # gem money-rails
   monetize :price_cents
 
