@@ -43,5 +43,4 @@
         description: Código do Usuário
         member_id: Código do Usuário
         category_id: Código da categoria
-
-
+        finish_date: Data de finalização

@@ -3,8 +3,9 @@ class Ad < ActiveRecord::Base
   belongs_to :member
 
   # Validates
-  validates_presence_of :title, :description, :category, :price, :picture
-  
+  validates :title, :description, :category, :finish_date, :picture, presence: true
+  validates :price, numericality: { greater_than: 0 }
+
   # gem money-rails
   monetize :price_cents
 

@@ -1,9 +1,9 @@
 <% if @ad.errors.any? %>
  <div class="alert alert-danger alert-dismissable">
   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        <ul>
          <% @ad.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+         <ul>
+           <li><%= message %></li>
         </ul>
      <% end %>
  </div>
@@ -35,9 +35,18 @@
       <div class="form-group">
         <%= f.label :price %>
         <div class="input-group">
-           <div class="input-group-addon"><%#= @ad.price.currency.symbol %></div>
+           <div class="input-group-addon"><%= @ad.price.currency.symbol %></div>
            <%= f.text_field :price, class: "form-control" %>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-3">
+      <div class="form-group">
+        <%= f.label :finish_date %>
+        <%= f.date_field :finish_date, class: "form-control" %>
       </div>
     </div>
   </div>
