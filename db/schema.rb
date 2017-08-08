@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170704020150) do
+ActiveRecord::Schema.define(version: 20170808001751) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -38,13 +38,14 @@ ActiveRecord::Schema.define(version: 20170704020150) do
     t.text     "description"
     t.integer  "category_id"
     t.integer  "member_id"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-    t.integer  "price_cents"
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+    t.integer  "price_cents",                      default: 0
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.date     "finish_date"
   end
 
   add_index "ads", ["category_id"], name: "index_ads_on_category_id"
