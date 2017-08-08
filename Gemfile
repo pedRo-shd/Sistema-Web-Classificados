@@ -29,6 +29,8 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-notifyjs'
   # BootboxJS
   gem 'rails-assets-bootbox'
+  # jQuery UI for the Rails asset pipeline
+  gem 'jquery-ui-rails'
 end
 
 # A library for generating fake data such as names, addresses, and phone numbers.
