@@ -21,7 +21,8 @@ Rails.application.routes.draw do
 
 
   devise_for :admins, :skip => [:registrations]
-  devise_for :members
+  devise_for :members, controllers: { sessions: 'members/sessions' }
+
 
   root 'site/home#index'
 
