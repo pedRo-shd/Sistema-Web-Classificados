@@ -35,17 +35,9 @@
         		</div>
         <!-- /#page-wrapper -->
 			</div>
-			
+
 		  <%= javascript_include_tag 'application' %>
 		  <%= javascript_include_tag 'backoffice' %>
-
-			<% if notice %>
-				<%= javascript_tag "$.notify('#{notice}', 'success');" %>
-			<% end %>
-
-			<% if alert %>
-				<%= javascript_tag "$.notify('#{alert}', 'error');" %>
-			<% end %>
-
+			<%= render partial: "layouts/shared/notification" %>
 		</body>
 </html>
