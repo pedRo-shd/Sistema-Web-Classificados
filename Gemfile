@@ -26,9 +26,13 @@ source 'https://rails-assets.org' do
 # The most popular front-end framework for developing responsive, mobile first projects on the web.
   gem 'rails-assets-bootstrap', '3.3.7'
   # NotifyJS
-  gem 'rails-assets-notifyjs'
+  #gem 'rails-assets-notifyjs'
+  # Bootstrap Notify
+  gem 'rails-assets-bootstrap.growl'
   # BootboxJS
   gem 'rails-assets-bootbox'
+  # Animate CSS
+  gem 'rails-assets-animate-css'
   # jQuery UI for the Rails asset pipeline
   gem 'jquery-ui-rails'
 end
