@@ -25,6 +25,8 @@
   </head>
 
     <body>
+      <!-- Conteúdo Bootstrap que mostra o carregamento de página  -->
+      <div id="global-spin" class="loading" style="display: none;">Loading&#8230;</div>
       <%= render partial: "layouts/site_shared/navigation" %>
     	<%= yield %> <!-- Esse comando permite que minha index no arquivo views/site/
     	/home/index.html aparece no browser -->
