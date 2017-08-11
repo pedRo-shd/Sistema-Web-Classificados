@@ -21,6 +21,8 @@ gem 'pundit'
 gem 'money-rails'
 # Easy file attachment management for ActiveRecord
 gem 'paperclip', '~> 5.0.0'
+# The safe Markdown parser, reloaded.
+gem 'redcarpet'
 
 source 'https://rails-assets.org' do
 # The most popular front-end framework for developing responsive, mobile first projects on the web.
