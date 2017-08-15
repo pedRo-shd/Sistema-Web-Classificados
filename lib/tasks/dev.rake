@@ -2,12 +2,12 @@ namespace :dev do
 
   desc "Setup Development"
   task setup: :environment do
-   images_path = Rails.root.join('public','system')
+    images_path = Rails.root.join('public','system')
 
     puts "Executando o setup para desenvolvimento..."
 
-    puts "Apagando imagens de public/system #{%x(rm -rf #{images_path})}"
     puts "APAGANDO BD... #{%x(rake db:drop)}"
+    puts "Apagando imagens de public/system #{%x(rm -rf #{images_path})}"
     puts "CRIANDO BD... #{%x(rake db:create)}"
     puts %x(rake db:migrate)
     puts %x(rake db:seed)
@@ -43,18 +43,6 @@ namespace :dev do
   task generate_members: :environment do
     puts "Cadastrando MEMBROS..."
 
-  5.times do
-    Ad.create!(
-      title: Faker::Lorem.sentence([2,3,4,5].sample),
-      # description: LeroleroGenerator.paragraph([1,2,3].sample),
-      description: markdown_fake,
-      member: Member.first,
-      category: Category.all.sample,
-      price: "#{Random.rand(500)},#{Random.rand(99)}",
-      picture: File.new(Rails.root.join('public', 'templates', 'images-for-ads', "#{Random.rand(4)}.jpg"), 'r')
-    )
-  end
-
     100.times do
       Member.create!(
         email: Faker::Internet.email,
@@ -72,22 +60,35 @@ namespace :dev do
   task generate_ads: :environment do
     puts "Cadastrando ANÚNCIOS..."
 
-    100.times do
+    4.times do
       Ad.create!(
         title: Faker::Lorem.sentence([2,3,4,5].sample),
-        description: LeroleroGenerator.paragraph([1,2,3].sample),
+        description_md: markdown_fake,
+        description_short: Faker::Lorem.sentence([2,3].sample),
         member: Member.all.sample,
         category: Category.all.sample,
         price: "#{Random.rand(500)},#{Random.rand(99)}",
-        picture: File.new(Rails.root.join('public', 'templates', 'images-for-ads', "#{Random.rand(4)}.jpg"), 'r')
+        finish_date: Date.today + Random.rand(90),
+        picture: File.new(Rails.root.join('public', 'templates', 'images-for-ads', "#{rand(0..3)}.jpg"), 'r')
       )
     end
+
+    # 100.times do
+    #   Ad.create!(
+    #     title: Faker::Lorem.sentence([2,3,4,5].sample),
+    #     description_md: markdown_fake,
+    #     description_short: Faker::Lorem.sentence([2,3].sample),
+    #     member: Member.all.sample,
+    #     category: Category.all.sample,
+    #     price: "#{Random.rand(500)},#{Random.rand(99)}",
+    #     finish_date: Date.today + Random.rand(90),
+    #     # picture: File.new(Rails.root.join('public', 'templates', 'images-for-ads', "#{Random.rand(9)}.jpg"), 'r')
+    #   )
+    # end
 
     puts "ANÚNCIOS cadastrados com sucesso!"
   end
 
-  # Gem doctor_ipsum com problemas com rails, linha abaixo executa comando ruby
-  # no terminal
   def markdown_fake
     %x(ruby -e "require 'doctor_ipsum'; puts DoctorIpsum::Markdown.entry")
   end

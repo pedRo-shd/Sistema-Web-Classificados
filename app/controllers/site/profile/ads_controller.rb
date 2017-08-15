@@ -3,7 +3,7 @@ class Site::Profile::AdsController < Site::ProfileController
 
   def index
     @ads = Ad.to_the(current_member)
-    
+
   end
 
   def new
@@ -40,6 +40,7 @@ class Site::Profile::AdsController < Site::ProfileController
 
     def params_ad
       params.require(:ad).permit(:id, :price, :category_id, :title, :description,
-                                 :finish_date, :picture)
+                                 :description_md, :description_short, :finish_date,
+                                 :picture)
     end
 end

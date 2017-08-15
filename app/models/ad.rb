@@ -1,9 +1,14 @@
 class Ad < ActiveRecord::Base
+
+  # Callbacks Markdown gem Redcarpet
+  before_save :md_to_html
+
+  # Associações
   belongs_to :category
   belongs_to :member
 
   # Validates
-  validates :title, :description, :category, :finish_date, :picture, presence: true
+  validates :title, :description, :description_md, :description_short, :category, :finish_date, :picture, presence: true
   validates :price, numericality: { greater_than: 0 }
 
   # gem money-rails
@@ -18,4 +23,23 @@ class Ad < ActiveRecord::Base
                                         default_url: "/images/:style/missing.png"
 
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
+
+  # Markdown gem Redcarpet
+  # Para saber mais, ver doc no github
+  def md_to_html
+   options = {
+     filter_html: true,
+     link_attributes: {
+       rel: "nofollow",
+       target: "_blank"
+     }
+   }
+   extensions = {
+     space_after_headers: true,
+     autolink: true
+   }
+   renderer = Redcarpet::Render::HTML.new(options)
+   markdown = Redcarpet::Markdown.new(renderer, extensions)
+   self.description = markdown.render(self.description_md)
+  end
 end
