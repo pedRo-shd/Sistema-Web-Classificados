@@ -5,6 +5,8 @@
          <h4><a href="#"><%= @ad.title %></a>
          </h4>
          <%= @ad.description %>
+         <!-- Markdown helper application -->
+         <%= md_to_html(@ad.description) %>
      </div>
      <div class="ratings">
          <p class="pull-right">3 reviews</p>

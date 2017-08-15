@@ -79,6 +79,22 @@ renderizando pelo yield de layouts/profile -->
     </div>
   </div>
 
+  <!-- Pre-visualização Markdown setada em _ad_detal -->
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="form-group">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Pré-Visualização
+            </div>
+            <div class="panel-body">
+                <%= md_to_html @ad.description %>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <%= submit_tag "Atualizar", class:"btn btn-default" %>
 
 <% end %>

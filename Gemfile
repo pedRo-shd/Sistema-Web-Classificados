@@ -41,6 +41,8 @@ end
 
 # A library for generating fake data such as names, addresses, and phone numbers.
 gem 'faker'
+# Markdown Lorem Ipsum generator
+gem 'doctor_ipsum'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
