@@ -1,0 +1,27 @@
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+
+        <%= render partial: 'site/shared/menu_categories' %>
+
+        <div id="home-ad-detail" class="col-md-9">
+
+            <div class="row">
+
+              <div class="well">
+                 <h4><%= @ads.first.category.description %></h4>
+              </div>
+
+              <%= render partial: 'site/shared/ads' %>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<%= render partial: 'backoffice/admins/shared/send_mail_modal' %>

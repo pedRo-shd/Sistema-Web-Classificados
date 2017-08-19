@@ -16,6 +16,7 @@ class Ad < ActiveRecord::Base
 
   scope :to_the, -> (member) { where(member: member) }
   scope :descending_order, -> (quantity = 10) { limit(quantity).order(created_at: :desc) }
+  scope :where_category, -> (id) { where(category: id) }
 
   # méthod paperclip, picture is name by column in table Ad
   has_attached_file :picture, styles: { large: "800x300#", medium: "320x150#",
