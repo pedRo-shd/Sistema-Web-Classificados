@@ -23,6 +23,8 @@ gem 'money-rails'
 gem 'paperclip', '~> 5.0.0'
 # The safe Markdown parser, reloaded.
 gem 'redcarpet'
+# FriendlyId is the “Swiss Army bulldozer” of slugging and permalink plugins for ActiveRecord
+gem 'friendly_id'
 
 source 'https://rails-assets.org' do
 # The most popular front-end framework for developing responsive, mobile first projects on the web.
