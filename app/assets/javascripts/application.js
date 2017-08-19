@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap.growl
+//= require wiselinks
 
 // ajax que inicie e pausa Carregamento Bootstrap setado no application layout
 $(document).ready(function() {
