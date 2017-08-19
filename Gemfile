@@ -27,16 +27,22 @@ gem 'redcarpet'
 source 'https://rails-assets.org' do
 # The most popular front-end framework for developing responsive, mobile first projects on the web.
   gem 'rails-assets-bootstrap', '3.3.7'
-  # NotifyJS
+# NotifyJS
   #gem 'rails-assets-notifyjs'
-  # Bootstrap Notify
+# Bootstrap Notify
   gem 'rails-assets-bootstrap.growl'
-  # BootboxJS
+# BootboxJS
   gem 'rails-assets-bootbox'
-  # Animate CSS
+# Animate CSS
   gem 'rails-assets-animate-css'
-  # jQuery UI for the Rails asset pipeline
+# jQuery UI for the Rails asset pipeline
   gem 'jquery-ui-rails'
+#  bootstrap-markdown Previous
+  gem 'rails-assets-bootstrap-markdown'
+# A markdown parser and compiler. Built for speed.
+# Complemento de bootstrap-markdown para visualização
+# de markdown na página
+  gem 'rails-assets-marked'
 end
 
 # A library for generating fake data such as names, addresses, and phone numbers.

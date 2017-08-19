@@ -83,13 +83,14 @@ renderizando pelo yield de layouts/profile -->
     <div class="col-xs-12">
       <div class="form-group">
         <%= f.label :description_md %>
-        <%= f.text_area :description_md, class: "form-control", rows: 10 %>
+        <%= f.text_area :description_md, class: "form-control", rows: 10,
+                                         data: { provide: 'markdown' } %>
       </div>
     </div>
   </div>
 
   <!-- Pre-visualização Markdown setada em _ad_detal -->
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-xs-12">
       <div class="form-group">
         <div class="panel panel-primary">
@@ -97,12 +98,12 @@ renderizando pelo yield de layouts/profile -->
                 Pré-Visualização
             </div>
             <div class="panel-body">
-                <%= @ad.description.html_safe %>
+                <%#= @ad.description.html_safe %>
             </div>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <%= submit_tag "Atualizar", class:"btn btn-default" %>
 
