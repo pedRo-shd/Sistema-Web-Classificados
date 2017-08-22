@@ -27,9 +27,32 @@
     <body>
       <!-- Conteúdo Bootstrap que mostra o carregamento de página  -->
       <div id="global-spin" class="loading" style="display: none;">Loading&#8230;</div>
+
       <%= render partial: "layouts/site_shared/navigation" %>
-    	<%= yield %> <!-- Esse comando permite que minha index no arquivo views/site/
-    	/home/index.html aparece no browser -->
+      <!-- Page Content -->
+      <div class="container">
+
+          <div class="row">
+
+              <%= render partial: 'layouts/site_shared/menu_categories' %>
+
+              <div id="home-ad-detail" class="col-md-9">
+
+                  <%= render partial: 'layouts/site_shared/ads_carousel' if controller_path == 'site/home' %>
+
+                  <div class="row">
+
+                    <%= yield %> <!-- Esse comando permite que minha index no arquivo views/site/
+                  	/home/index.html aparece no browser -->
+
+                  </div>
+
+              </div>
+
+          </div>
+
+      </div>
+
       <%= render partial: "layouts/site_shared/footer" %>
 
       <%= javascript_include_tag 'application' %>

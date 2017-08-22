@@ -2,7 +2,7 @@ class Site::AdDetailsController < SiteController
   before_action :set_id, only: [:show]
 
   def show
-    #
+    @categories = Category.order_by_description
   end
 
   private
