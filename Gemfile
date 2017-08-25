@@ -27,6 +27,10 @@ gem 'redcarpet'
 gem 'friendly_id'
 # If Turbolinks are not enough for you. Wiselinks makes your application work faster.
 gem 'wiselinks'
+# A Scope & Engine based, clean, powerful, customizable and sophisticated paginator
+gem 'kaminari'
+# Kaminari i18n
+gem 'kaminari-i18n'
 
 source 'https://rails-assets.org' do
 # The most popular front-end framework for developing responsive, mobile first projects on the web.

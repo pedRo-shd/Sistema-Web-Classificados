@@ -15,9 +15,9 @@ class Ad < ActiveRecord::Base
   monetize :price_cents
 
   scope :to_the, -> (member) { where(member: member) }
-  scope :descending_order, -> (quantity = 10) { limit(quantity).order(created_at: :desc) }
+  scope :descending_order, -> (quantity = 10, page = 1) { limit(quantity).order(created_at: :desc).page(page).per(6) }
   scope :by_category, -> (id) { where(category: id) }
-
+  scope :search, -> (term, page = 1) { where("lower(title) LIKE ?", "%#{term.downcase}%").page(page).per(6)}
   # méthod paperclip, picture is name by column in table Ad
   has_attached_file :picture, styles: { large: "800x300#", medium: "320x150#",
                                         thumb: "100x100>" },
