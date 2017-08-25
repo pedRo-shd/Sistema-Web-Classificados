@@ -22,6 +22,12 @@ Dependências:
   sudo apt-get install imagemagick
   ```
 
+* Graphviz (https://www.graphviz.org) - Apenas para Ambiente de Desenvolvimento
+ ```
+ sudo apt-get update
+ sudo apt-get install graphviz
+ ```
+
 Este projeto desenvolvido em Ruby on Rails é baseado em websites como mercadolivre.com e olx.com,
 o projeto contempla a criação de duas features principais para :
 

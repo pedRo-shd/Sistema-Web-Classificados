@@ -31,6 +31,8 @@ gem 'wiselinks'
 gem 'kaminari'
 # Kaminari i18n
 gem 'kaminari-i18n'
+# Generate Entity-Relationship Diagrams for Rails applications http://voormedia.github.io/rails-erd/
+gem 'rails-erd'
 
 source 'https://rails-assets.org' do
 # The most popular front-end framework for developing responsive, mobile first projects on the web.
