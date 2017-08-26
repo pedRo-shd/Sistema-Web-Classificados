@@ -11,7 +11,7 @@ class Ad < ActiveRecord::Base
   belongs_to :member
 
   # Validates
-  validates :title, :description, :description_md, :description_short, :category, :finish_date, :picture, presence: true
+  validates :title, :description_md, :description_short, :category, :finish_date, :picture, presence: true
   validates :price, numericality: { greater_than: 0 }
 
   # gem money-rails
