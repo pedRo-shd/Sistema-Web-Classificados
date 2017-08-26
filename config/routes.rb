@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
     resources :ad_details, only: [:show]
     resources :categories, only: [:show]
+    resources :comments, only: [:create]
   end
 
 

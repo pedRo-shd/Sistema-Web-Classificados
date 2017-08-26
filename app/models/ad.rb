@@ -9,7 +9,7 @@ class Ad < ActiveRecord::Base
   # Associações
   belongs_to :category, counter_cache: true
   belongs_to :member
-
+  has_many :comments
   # Validates
   validates :title, :description_md, :description_short, :category, :finish_date, :picture, presence: true
   validates :price, numericality: { greater_than: 0 }
@@ -19,7 +19,7 @@ class Ad < ActiveRecord::Base
 
   scope :to_the, -> (member) { where(member: member) }
   scope :descending_order, -> (page) { order(created_at: :desc).page(page).per(QT_PAGE_PER) }
-  scope :by_category, -> (id) { where(category: id) }
+  scope :by_category, -> (id, page) { where(category: id).page(page).per(QT_PAGE_PER) }
   scope :search, -> (term, page) { where("lower(title) LIKE ?", "%#{term.downcase}%").page(page).per(QT_PAGE_PER)}
   # méthod paperclip, picture is name by column in table Ad
   has_attached_file :picture, styles: { large: "800x300#", medium: "320x150#",

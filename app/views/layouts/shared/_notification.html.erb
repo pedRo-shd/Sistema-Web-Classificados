@@ -10,6 +10,6 @@
 
 <% if alert %>
   <%= javascript_tag "$.notify({ message: '#{alert}', icon: 'glyphicon glyphicon-remove-circle' },
-                               { type: 'success', placement: { from: 'top', align: 'center'},
+                               { type: 'danger', placement: { from: 'top', align: 'center'},
                                  delay: 400});" %>
 <% end %>
