@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+	before_action :store_current_location, :unless => :devise_controller?
 
 # Rodar Pundit em todas minhas aplicações
 	include Pundit
@@ -29,4 +30,11 @@ class ApplicationController < ActionController::Base
     redirect_to(request.referrer || root_path)
   end
 
+	private
+  # override the devise helper to store the current location so we can
+  # redirect to it after loggin in or out. This override makes signing in
+  # and signing up work automatically.
+  def store_current_location
+    store_location_for(:member, request.url)
+  end
 end
