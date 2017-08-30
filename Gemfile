@@ -33,6 +33,8 @@ gem 'kaminari'
 gem 'kaminari-i18n'
 # Generate Entity-Relationship Diagrams for Rails applications http://voormedia.github.io/rails-erd/
 gem 'rails-erd'
+# A Ruby Gem that wraps the functionality of jQuery Raty library, and provides optional IMDB style rating.
+gem 'ratyrate'
 
 source 'https://rails-assets.org' do
 # The most popular front-end framework for developing responsive, mobile first projects on the web.
