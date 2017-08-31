@@ -7,20 +7,30 @@
          <!-- Markdown  -->
          <%= @ad.description.html_safe %>
      </div>
-     <div class="ratings">
-         <p class="pull-right">3 reviews</p>
-         <p>
-          <%= rating_for @ad, 'quality' %> 
-         </p>
-     </div>
  </div>
+
+   <div class="well well-sm">
+       <div class="ratings">
+           <p class="pull-right"><%= @ad.comments_count %> comentários</p>
+           <p>
+            <%= rating_for @ad, 'quality' %>
+           </p>
+       </div>
+   </div>
+
  <div class="well">
-     <div class="text-right">
+
+    <div class="text-right">
+      <% if member_signed_in? %>
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#commentModal">
           Deixe um comentário
         </button>
-     </div>
-     <hr>
+        <hr>
+      <% else %>
+        <%= link_to "Efetue login para comentar", new_member_session_path, class:"btn btn-success" %>
+        <hr>
+      <% end %>
+   </div>
 
      <%= render partial: 'site/ad_details/comments' %>
      <%= render partial: 'site/ad_details/comment_modal' %>
