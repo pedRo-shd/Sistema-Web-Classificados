@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  namespace :site do
+  namespace :profile do
+    get 'my_profiles/edit'
+    end
+  end
+
   post '/rate' => 'rater#create', :as => 'rate'
   namespace :backoffice do
     resources :send_mail, only: [:edit, :create]
@@ -16,6 +22,7 @@ Rails.application.routes.draw do
     namespace :profile do
       resources :dashboard, only: [:index]
       resources :ads, only: [:index, :edit, :update, :new, :create]
+      resources :my_profiles, only: [:edit, :update]
     end
 
     resources :ad_details, only: [:index, :show]

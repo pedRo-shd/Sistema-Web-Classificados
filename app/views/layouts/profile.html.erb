@@ -47,6 +47,10 @@
                 <li>
                     <%= link_to "Novo Anúncio", new_site_profile_ad_path  %>
                 </li>
+                <li>
+                    <%= link_to "Meu Perfil", edit_site_profile_my_profile_path(current_member.id) %>
+                </li>
+
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
