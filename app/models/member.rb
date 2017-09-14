@@ -4,6 +4,7 @@ class Member < ActiveRecord::Base
   ratyrate_rater
 
   has_many :ads
+  has_one :profile_member
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
