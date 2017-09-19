@@ -31,8 +31,5 @@
 
 <!-- Mostra Mensagem para colocar login e senha, e não deixar em branco-->
 <% flash.each do |key, value| %>
-    <script>
-        $.notify("<%= value %>", "info");
-    </script>
+    <%= javascript_tag "$.notify( { message: '#{value}'}, { type: 'danger', placement: { from: 'top', align: 'center' }});" %>
 <% end %>
-
