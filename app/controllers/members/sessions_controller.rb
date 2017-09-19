@@ -1,4 +1,12 @@
 class Members::SessionsController < Devise::SessionsController
+
+  def new
+    super do |resource|
+      resource.build_profile_member
+    end
+  end
+
+
   protected
   # Redireciona member a este path após logar, método customizado do devise,
   # para mais detalhes ver documentação Devise Redirect:
@@ -12,7 +20,6 @@ class Members::SessionsController < Devise::SessionsController
         site_profile_dashboard_index_path
       end
     end
-
 
     # def after_update_path_for(resource)
     #   signed_in_root_path(resource)
