@@ -24,6 +24,8 @@ class Ad < ActiveRecord::Base
   scope :descending_order, -> (page) { order(created_at: :desc).page(page).per(QT_PAGE_PER) }
   scope :by_category, -> (id, page) { where(category: id).page(page).per(QT_PAGE_PER) }
   scope :search, -> (term, page) { where("lower(title) LIKE ?", "%#{term.downcase}%").page(page).per(QT_PAGE_PER)}
+  scope :random, ->(quantity) { limit(quantity).order("RANDOM()") }
+  
   # méthod paperclip, picture is name by column in table Ad
   has_attached_file :picture, styles: { large: "800x300#", medium: "320x150#",
                                         thumb: "100x100>" },
