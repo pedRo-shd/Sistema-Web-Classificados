@@ -17,15 +17,22 @@
                 <ul class="nav navbar-nav pull-right">
                   <% unless member_signed_in? %>
                     <li>
-                        <%= link_to "Login", new_member_session_path %>
+                        <%= link_to "Login Membro", new_member_session_path %>
+                    </li>
+                    <li>
+                         <%= link_to "Login Administrador", new_admin_session_path unless current_admin %>
                     </li>
                     <li>
                          <%= link_to "Cadastrar-se", new_member_registration_path %>
+                    </li>
+                    <li>
+                        <%= link_to "Área Administrativa", backoffice_categories_path if current_admin %>
                     </li>
                   <% else %>
                     <li>
                         <%= link_to current_member.email, "#" %>
                     </li>
+
                     <li>
                         <%= link_to "Perfil", site_profile_dashboard_index_path %>
                     </li>
