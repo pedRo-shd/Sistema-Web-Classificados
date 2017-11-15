@@ -82,4 +82,4 @@ production:
   <<: *default
   database: webclassificados_production
   username: webclassificados
-  password: <%= ENV['VIRTUAL_BANKING_DATABASE_PASSWORD'] %>
+  password: 
