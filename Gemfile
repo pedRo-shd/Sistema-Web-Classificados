@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.5'
 # Repository for collecting Locale data for Ruby on Rails I18n as well as other interesting, Rails related I18n stuff http://rails-i18n.org
 gem 'rails-i18n'
+
+gem 'mysql2'
 # Manage Procfile-based applications http://ddollar.github.com/foreman
 gem 'foreman'
 # Flexible authentication solution for Rails with Warden. http://blog.plataformatec.com.br/tag/devise/
