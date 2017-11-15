@@ -6,7 +6,7 @@ class Site::Profile::MyProfilesController < Site::ProfileController
 
   def update
     if @profile_member.update(params_profile_member)
-      redirect_to edit_site_profile_my_datum_path(current_member.id), notice: "Perfil atualizado com sucesso!"
+      redirect_to edit_site_profile_my_profile_path(current_member.id), notice: "Perfil atualizado com sucesso!"
     else
       render :edit
     end

@@ -35,6 +35,8 @@ gem 'kaminari-i18n'
 gem 'rails-erd'
 # A Ruby Gem that wraps the functionality of jQuery Raty library, and provides optional IMDB style rating.
 gem 'ratyrate'
+# jQuery UI for the Rails asset pipeline
+gem 'jquery-ui-rails'
 
 source 'https://rails-assets.org' do
 # The most popular front-end framework for developing responsive, mobile first projects on the web.
@@ -47,8 +49,6 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-bootbox'
 # Animate CSS
   gem 'rails-assets-animate-css'
-# jQuery UI for the Rails asset pipeline
-  gem 'jquery-ui-rails'
 #  bootstrap-markdown Previous
   gem 'rails-assets-bootstrap-markdown'
 # A markdown parser and compiler. Built for speed.

@@ -17,7 +17,7 @@
     </div>
 <% end %>
 
-<%= form_for(@profile_member, url: site_profile_my_datum_path(@profile_member)) do |f| %>
+<%= form_for(@profile_member, url: site_profile_my_profile_path(@profile_member)) do |f| %>
 
   <div class="row">
     <div class="col-xs-6">
@@ -46,5 +46,5 @@
     </div>
   </div>
 
-  <%= submit_tag "#{t('buttons.send')}", class: "btn btn-default"  %>
+  <%= submit_tag "Enviar", class: "btn btn-default"  %>
 <% end %>
